@@ -225,7 +225,8 @@ echo -e ""
 # make 
 if [ "$opt_log" -ne 0 ]; then
     #build and then sign with release keys
-    make -j"$opt_jobs" bacon 2>&1 | tee build-logs/broken_$device-$(date "+%Y%m%d").txt
+    make -j"$opt_jobs" dist 2>&1 | tee build-logs/slim_$device-$(date "+%Y%m%d").txt
+    
 else
     # build normally
     make -j"$opt_jobs" bacon 2>&1 | tee build-logs/slim_$device-$(date "+%Y%m%d").txt
